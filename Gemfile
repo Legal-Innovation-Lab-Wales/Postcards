@@ -56,4 +56,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Devise gem for login and authentication
-gem 'devise'
+gem 'devise', '~> 4.8.0'
+
+
+gem 'font-awesome-sass', '~> 5.15.1'
+gem 'bootstrap', '~> 5.0.1'
