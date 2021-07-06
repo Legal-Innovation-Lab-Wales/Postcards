@@ -1,10 +1,24 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<main class="container index">
+  <div class="home content">
+    <div class="header">
+      <h1>Postcards</h1>
+      <h2>From a stranger</h2>
+      <p>--------</p>
+    </div>
+    <div class="container-fluid card-group">
+    <% @postcards.each do |postcard| %>
+      <div class="card" style="width: 18rem;">
+        <image class="card-img-top" src="images/pier.jpg" alt="Card image cap"></image>
+        <div class="card-body">
+          <h5 class="card-title"><%= postcard.title %></h5>
+          <p class="card-text"><%= postcard.body %></p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+          <div class="card-footer">
+            <p>From: <%= postcard.from %></p>
+          </div>
+      </div>
+    <% end %>
+    </div>
   </div>
-</div>
+</main>

@@ -1,0 +1,31 @@
+.navbar {
+  text-align: center;
+  color: white;
+  background-color: #83BCA9;
+  padding: 1rem;
+
+  .navbar-nav{
+    .nav-item{
+      padding: 0.5rem;
+      color: white;
+      text-decoration: none;
+    }
+  }
+  .brand-link{
+    color: white;
+  }
+
+  .d-flex{
+    .p {
+      color: brown;
+    }
+
+    .btn {
+      margin: 0.25rem;
+    }
+
+    .p{
+      margin: 1rem;
+    }
+  }
+}
