@@ -4,29 +4,42 @@
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light">Postcards from a Stranger</h1>
-          <p class="lead text-muted">Start sending & receiving virtual postcards from around the world. </p>
-          <p>
+          <% if user_signed_in? %>
+          <p>You currently have # new postcards</p>
+          <% else %>
+            <p class="lead text-muted">Start sending & receiving virtual postcards from around the world. </p>
             <a href="users/sign_up" class="btn btn-primary my-2">Sign up Today</a>
             <a href="#" class="btn btn-secondary my-2">See Examples</a>
-          </p>
+          <% end %>
         </div>
       </div>
     </section>
 
-    <div class="container-fluid card-group">
-    <% @postcards.each do |postcard| %>
-      <div class="card" style="width: 18rem;">
-        <image class="card-img-top" src="images/pier.jpg" alt="Card image cap"></image>
-        <div class="card-body">
-          <h5 class="card-title"><%= postcard.title %></h5>
-          <p class="card-text"><%= postcard.body %></p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <% @postcards.each do |postcard| %>
+            <div class="col">
+              <div class="card shadow-sm">
+                <image class="card-img-top" src="/assets/cards/<%=rand(3)%>.jpg" alt="Card image cap"></image>
+                <div class="card-body">
+                  <h5 class="card-title"><%= postcard.title %></h5>
+                  <p class="card-text"><%= postcard.body %></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Reply</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+                <p class="card-footer">From: <%= postcard.from %></p>
+              </div>
+            </div>
+          <% end %>
         </div>
-          <div class="card-footer">
-            <p>From: <%= postcard.from %></p>
-          </div>
       </div>
-    <% end %>
     </div>
   </div>
 </main>

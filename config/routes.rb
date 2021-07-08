@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
-  devise_for :users
+  devise_for :users do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   get '/about', to: 'home#about'
   get '/new', to: 'home#new'
