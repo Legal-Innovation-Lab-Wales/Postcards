@@ -1,10 +1,18 @@
 <main class="container index">
   <div class="home content">
-    <div class="header">
-      <h1>Postcards</h1>
-      <h2>From a stranger</h2>
-      <p>--------</p>
-    </div>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Postcards from a Stranger</h1>
+          <p class="lead text-muted">Start sending & receiving virtual postcards from around the world. </p>
+          <p>
+            <a href="users/sign_up" class="btn btn-primary my-2">Sign up Today</a>
+            <a href="#" class="btn btn-secondary my-2">See Examples</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
     <div class="container-fluid card-group">
     <% @postcards.each do |postcard| %>
       <div class="card" style="width: 18rem;">

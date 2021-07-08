@@ -1,31 +1,41 @@
-<nav class="navbar nav navbar-expand-lg">
-  <%= link_to root_path, class: 'brand-link' ? 'active' : 'text-white' do %>
-    <i class="fas fa-mail-bulk"></i> Postcards
-  <% end %>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <%= link_to about_path do %>
-          <i class="fas fa-info"></i> About
-        <% end %>
-      </li>
-      <li class="nav-item">
-        <%= link_to new_path do %>
-          <i class="fas fa-vote-yea"></i> New Postcard
-        <% end %>
-      </li>
-    </ul>
-    <form class="d-flex">
+<div class="collapse bg-dark" id="navbarHeader">
+  <div class="container">
+    <div class="row">
+      <div class ="col-sm-8  col-md-7 py-4">
+        <h4>About</h4>
+        <p>Here is some About information about the postcards application</p>
+      </div>
+      <div class="col-sm-4 offset-md-1 py-4">
+        <h4>Contact</h4>
+        <ul class="list">
+          <li>Twitter</li>
+          <li>Email</li>
+          <li>Github</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a href="/" class="navbar-brand d-flex align-items-center">
+      <i class="fas fa-mail-bulk"></i>
+      <strong> Postcards from a stranger</strong>
+    </a>
+    <div class="fa-align-right">
       <% if user_signed_in? %>
         <p>Currently Logged in as <%= current_user.name %></p>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-success"  %>
       <% else %>
         <%= link_to "Login", new_user_session_path, class: "btn btn-outline-success" %>
       <% end %>
-    </form>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    </div>
   </div>
-  </div>
-</nav>
+</div>
+
+
