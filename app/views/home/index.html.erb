@@ -6,10 +6,11 @@
           <h1 class="fw-light">Postcards from a Stranger</h1>
           <% if user_signed_in? %>
           <p>You currently have # new postcards</p>
+            <%= link_to "Send a New Postcard", new_path, class: "btn btn-secondary my-2" %>
           <% else %>
             <p class="lead text-muted">Start sending & receiving virtual postcards from around the world. </p>
-            <a href="users/sign_up" class="btn btn-primary my-2">Sign up Today</a>
-            <a href="#" class="btn btn-secondary my-2">See Examples</a>
+            <%= link_to "Sign up Today", users_sign_up_path, class: "btn btn-secondary my-2" %>
+            <%= link_to "See Examples", about_path, class: "btn btn-secondary my-2" %>
           <% end %>
         </div>
       </div>
